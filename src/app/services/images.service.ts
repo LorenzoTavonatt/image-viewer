@@ -7,12 +7,25 @@ import { Injectable } from '@angular/core';
 })
 export class ImagesService {
 
-  url:string= "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
+  url:string= "http://localhost:3000/images"
+  wData:any;
 
   constructor(public http : HttpClient) { }
 
-  getAll(){
+  //richiesta http per ricevere immagini dal json
+  getImages(){
     return this.http.get(this.url);
   }
 
+  //richiesta http per cancellare un immagine dal json
+  onDelete(id:number){
+    return this.http.delete(this.url+"/"+id);
+  }
+
+  //richiesta http per aggiungere un immagine al json
+  onSave(id:number, url:String){
+    this.http.post<any>(this.url, {id: id , link: url}).subscribe(data =>
+      this.wData = data.id + data.url
+    )
+  }
 }

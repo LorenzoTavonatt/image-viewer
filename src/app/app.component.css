@@ -1,0 +1,77 @@
+.searchNew{
+    position: relative;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 10px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align:center;
+}
+
+input{
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+button{
+    width: 60%;
+    background-color: #34568B;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 60%;
+}
+  
+button:hover {
+    opacity: 80%;
+}
+
+.image-button{
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.image-button img{
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+.image-button button{
+    position: absolute;
+    width: auto;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 100%;
+  }
+
+.getjson{
+    position:fixed;
+    width: 90%;
+    margin: 0%;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

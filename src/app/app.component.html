@@ -1,2 +1,32 @@
-<hr>
-<button (click)="onInizializza()">inizializza dati per async</button>
+<div class="search" [hidden]="!isHide">
+    <div class="searchNew">
+        <form #form="ngForm" (ngSubmit)="searchImage(form.value)">
+            <label for="width">Width(px):</label><br>
+            <input type="text" id="width" name="width" ngModel>
+            <br>
+            <label for="height">Height(px):</label><br>
+            <input type="text" id="height" name="height" ngModel><br>
+            <br>
+            <button id="search" type="submit" (click)="show()">Cerca</button>
+        </form>
+    </div>
+
+    <div *ngIf="newImage$"  [hidden]="!isShow">
+        <div class="image-button">
+            <button (click)="onSave(newImage$)">SALVA</button>
+            <img src="{{newImage$}}">
+        </div>
+    </div>
+</div>
+
+<button class="getjson" (click)="getImages()" (click)="featureHide()" [hidden]="!isHide">Carica json</button>
+
+<div *ngFor="let images of images$ | async">
+    <div class="image-button">
+        <button (click)="onDelete(images.id)">ELIMINA</button>
+        <img src="{{images.link}}">
+    </div>
+</div>
+
+
+
